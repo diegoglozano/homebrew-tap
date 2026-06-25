@@ -1,25 +1,25 @@
 class Revector < Formula
   desc "Declarative, versioned schema & config migrations for Qdrant — Alembic for vector collections."
   homepage "https://github.com/diegoglozano/revector"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.2.0/revector-aarch64-apple-darwin.tar.xz"
-      sha256 "82e910e3053815d4ee0c3acdf5de77aabe1c264673ef88a6d3df7a38ac72ccef"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.3.0/revector-aarch64-apple-darwin.tar.xz"
+      sha256 "54255d32b7e09e9267c539d66af191af3ab88a2d8002e22e7870904d098f4fc7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.2.0/revector-x86_64-apple-darwin.tar.xz"
-      sha256 "030cac6b06a6be4767ebe600b45980447b6930cf149bb99923a3df3331afc0b1"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.3.0/revector-x86_64-apple-darwin.tar.xz"
+      sha256 "50c4e4f6d2faa959f04ab38d020f65e249fc5487415ee022a379986b3455d006"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.2.0/revector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "cf6f7f088d63a523112e8829c99d422b0286794df99ee1f4dc5c2ac12f652835"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.3.0/revector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "14ca605a6892b50771d265b207dc0161d2d34eb34b81cb91e11c230663e26f8c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.2.0/revector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7a528ccd694db3bff1db3df0a6fb3b0e975bd7fd447d59f16974002f92be47f4"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.3.0/revector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e9d72cfdcc75a555c31d98f7fa0d7e469259f0707f5572b6d2f39dd7822c6050"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
