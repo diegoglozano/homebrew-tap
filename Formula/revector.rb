@@ -1,25 +1,25 @@
 class Revector < Formula
   desc "Declarative, versioned schema & config migrations for Qdrant — Alembic for vector collections."
   homepage "https://github.com/diegoglozano/revector"
-  version "0.4.0"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.4.0/revector-aarch64-apple-darwin.tar.xz"
-      sha256 "f228f8fce567345829f146e99b9eaec3f7a570b1806f4a79ce85ecec99f0de77"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.5.0/revector-aarch64-apple-darwin.tar.xz"
+      sha256 "7e3bd0302be85b791729a4c9019b2cc9fe20f474e44b487cb4ff659f5c611a22"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.4.0/revector-x86_64-apple-darwin.tar.xz"
-      sha256 "1dd60fdd6edc668fd19b50dba44c42723d36dcb8983fde7be3b1bc9ac60120cd"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.5.0/revector-x86_64-apple-darwin.tar.xz"
+      sha256 "e44953b98c0bdcb6170ba45575bfbc681962fa4bffbfcf8116aebc3a0dd298b4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.4.0/revector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "705a5447ac2cce2737b1b228816c485de147d5510979385cffac26c3df26d70b"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.5.0/revector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "cb92bac9010e48ed5ee7422b61fc6624433abe4bb2a6c7e4e391488081d029a2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/diegoglozano/revector/releases/download/v0.4.0/revector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2fc4df7ab3d67cde712f43710f2c566683a945220e40f242674b67629123c2d5"
+      url "https://github.com/diegoglozano/revector/releases/download/v0.5.0/revector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "47efe13d186b07ca8f0de00dd9a11b42668295dc5f13cc9a1cfffc1c5abcae8f"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -50,10 +50,18 @@ class Revector < Formula
   end
 
   def install
-    bin.install "revector" if OS.mac? && Hardware::CPU.arm?
-    bin.install "revector" if OS.mac? && Hardware::CPU.intel?
-    bin.install "revector" if OS.linux? && Hardware::CPU.arm?
-    bin.install "revector" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "revector"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "revector"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "revector"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "revector"
+    end
 
     install_binary_aliases!
 
